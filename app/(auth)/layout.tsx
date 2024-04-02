@@ -1,14 +1,12 @@
-import "./globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import SessionProvider from "./providers/SessionProvider";
+import "../globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sridhar BM | Auth",
-  description: "Sridhar Business management",
+  description: "SignIn & SignUp for sridhar business management",
 };
 
 export default function RootLayout({
@@ -18,10 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <SessionProvider>{children}</SessionProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
